@@ -54,6 +54,7 @@ grammar Cobol85;
 options
 {
 	language = Java;
+	output=AST;
 }
 
 startRule : compilationUnit EOF;
