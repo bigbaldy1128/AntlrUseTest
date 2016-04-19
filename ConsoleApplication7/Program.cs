@@ -13,12 +13,16 @@ namespace ConsoleApplication7
     {
         static void Main(string[] args)
         {
-            using (StreamReader fileStream = new StreamReader(@"C:\Users\wa\Desktop\antlr\src\read.cbl"))
+            using (StreamReader fileStream = new StreamReader(@"C:\Users\wa\Desktop\grammars-v4\c\examples\add.c"))
             {
                 AntlrInputStream inputStream = new AntlrInputStream(fileStream);
-                Cobol85Lexer lexer = new Cobol85Lexer(inputStream);
+                CLexer lexer = new CLexer(inputStream);
                 CommonTokenStream commonTokenStream = new CommonTokenStream(lexer);
-                Cobol85Parser parser = new Cobol85Parser(commonTokenStream);
+                CParser parser = new CParser(commonTokenStream);
+                var tree = parser.compilationUnit();
+                CVisitor cVisitor = new CVisitor();
+                cVisitor.Visit(tree);
+                Console.ReadLine();
             }
         }
     }

@@ -50,13 +50,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CListener.cs" />
+    <Compile Include="CVisitor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <Antlr4 Include="Cobol85.g4">
+    <Antlr4 Include="C.g4">
       <Generator>MSBuild:Compile</Generator>
       <CustomToolNamespace>RootNamespace.Folder</CustomToolNamespace>
     </Antlr4>
